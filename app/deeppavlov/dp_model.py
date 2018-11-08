@@ -8,4 +8,4 @@ class DPModel():
 		model = build_model_from_config(config_path)
 
 	def parse(text):
-		return model(text)
+		return model([text])
