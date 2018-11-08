@@ -1,0 +1,6 @@
+wordcloud
+deeppavlov
+rasa_nlu
+snips-nlu
+flask
+Flask-PyMongo
