@@ -5,4 +5,26 @@ class RasaModel():
 		self.model = Interpreter.load('./app/rasanlu/models/nlu/default/chat')
 
 	def parse(self, text):
-		return self.model.parse(text)
+		return self.parse_model_response(self.model.parse(text))
+
+	def parse_model_response(self, response):
+		parsed_resp = {
+			'text': response['text']
+		}
+		intent = {
+			'value': response['intent']['name'],
+			'score': response['intent']['confidence']
+		}
+		intents = [{
+			'value': intent['name'],
+			'score': intent['confidence']
+		} for intent in response['intent_ranking']]
+		entities = [{
+			'value': entity['value'],
+			'entity': entity['entity'],
+			'start': entity['start'],
+			'end': entity['end']
+		} for entity in response['entities']]
+		parsed_resp.update({'intents': intents, 'entities': entities, 'intent': intent})
+		return parsed_resp
+

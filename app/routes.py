@@ -7,7 +7,7 @@ import io
 def parse():
 	text = request.args.get('text')
 	parsed_info = model.parse(text)
-	intent_cloud.register_intent(parsed_info['intent']['name'])
+	intent_cloud.register_intent(parsed_info['intent']['value'])
 	return jsonify(parsed_info)
 
 
