@@ -4,3 +4,8 @@ rasa_nlu
 snips-nlu
 flask
 Flask-PyMongo
+spacy
+gensim
+pybind11==2.2.3
+git+https://github.com/deepmipt/fastText.git#egg=fastText==0.8.22
+tensorflow==1.10.0
