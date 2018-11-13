@@ -1,0 +1,52 @@
+{
+  "config": {
+    "max_pattern_length": 1000,
+    "max_queries": 100,
+    "unit_name": "deterministic_intent_parser"
+  },
+  "group_names_to_slot_names": {
+    "group_0": "weatherLocation",
+    "group_1": "weatherDate",
+    "group_10": "weatherLocation",
+    "group_11": "room",
+    "group_12": "room",
+    "group_13": "room",
+    "group_14": "room",
+    "group_15": "room",
+    "group_2": "weatherDate",
+    "group_3": "weatherLocation",
+    "group_4": "weatherLocation",
+    "group_5": "weatherDate",
+    "group_6": "weatherLocation",
+    "group_7": "weatherDate",
+    "group_8": "weatherDate",
+    "group_9": "weatherLocation"
+  },
+  "language_code": "en",
+  "patterns": {
+    "sampleGetWeather": [
+      "^\\s*Will\\s*it\\s*be\\s*sunny\\s*in\\s*(?P<group_4>%LOCATION%)\\s*(?P<group_5>%SNIPSDATETIME%)\\s*\\?\\s*$",
+      "^\\s*What\\s*kind\\s*of\\s*weather\\s*should\\s*I\\s*expect\\s*(?P<group_2>%SNIPSDATETIME%)\\s*in\\s*(?P<group_3>%LOCATION%)\\s*\\?\\s*$",
+      "^\\s*What\\s*is\\s*the\\s*weather\\s*in\\s*(?P<group_10>%LOCATION%)\\s*\\?\\s*$",
+      "^\\s*What\\s*will\\s*be\\s*the\\s*weather\\s*in\\s*(?P<group_6>%LOCATION%)\\s*(?P<group_7>%SNIPSDATETIME%)\\s*\\?\\s*$",
+      "^\\s*Tell\\s*me\\s*if\\s*it\\s*is\\s*going\\s*to\\s*rain\\s*(?P<group_8>%SNIPSDATETIME%)\\s*in\\s*(?P<group_9>%LOCATION%)\\s*please\\s*$",
+      "^\\s*give\\s*me\\s*the\\s*weather\\s*forecast\\s*for\\s*(?P<group_0>%LOCATION%)\\s*(?P<group_1>%SNIPSDATETIME%)\\s*$"
+    ],
+    "sampleTurnOnLight": [
+      "^\\s*The\\s*(?P<group_11>%ROOM%)\\s*is\\s*dark\\s*please\\s*turn\\s*on\\s*the\\s*light\\s*!\\s*$",
+      "^\\s*Turn\\s*on\\s*the\\s*lights\\s*in\\s*the\\s*(?P<group_15>%ROOM%)\\s*$",
+      "^\\s*Can\\s*you\\s*enlight\\s*the\\s*(?P<group_12>%ROOM%)\\s*\\?\\s*$",
+      "^\\s*I\\s*need\\s*some\\s*light\\s*in\\s*the\\s*(?P<group_13>%ROOM%)\\s*please\\s*$",
+      "^\\s*Please\\s*put\\s*some\\s*lights\\s*in\\s*the\\s*(?P<group_14>%ROOM%)\\s*$"
+    ]
+  },
+  "slot_names_to_entities": {
+    "sampleGetWeather": {
+      "weatherDate": "snips/datetime",
+      "weatherLocation": "location"
+    },
+    "sampleTurnOnLight": {
+      "room": "room"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+from .snips_model import SnipsModel

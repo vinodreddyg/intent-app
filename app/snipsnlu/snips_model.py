@@ -2,10 +2,10 @@ from snips_nlu import SnipsNLUEngine, load_resources
 
 class SnipsModel():
 	def __init__(self, config_path):
-		engine = SnipsNLUEngine.from_path(config_path)
+		self.engine = SnipsNLUEngine.from_path(config_path)
 
 	def parse(self, text):
-		return self.parse_model_response(engine.parse(text))
+		return self.parse_model_response(self.engine.parse(text))
 
 	def parse_model_response(self, response):
 		intent = {
