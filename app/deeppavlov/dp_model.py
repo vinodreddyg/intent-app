@@ -4,18 +4,18 @@ from .dp_base import DPBase
 
 class DPModel():
 	def __init__(self, intent_path, ner_path):
-		ner_model = DPBase(ner_path, download=True)
-		intent_model = DPBase(intent_path, download=True)
+		self.ner_model = DPBase(ner_path, download=True)
+		self.intent_model = DPBase(intent_path, download=True)
 
-	def parse(text):
-		intents = parse_intent_response(intent_model([text]))
-		entities = parse_ner_response(ner_model([text]))
+	def parse(self, text):
+		intents = self.parse_intent_response(self.intent_model.parse(text))
+		entities = self.parse_ner_response(self.ner_model.parse(text))
 		resp = {'text': text}
 		resp.update(intents)
 		resp.update(entities)
 		return resp
 
-	def parse_intent_response(response):
+	def parse_intent_response(self, response):
 		# return {
 		#   'intents': [
 		# 		{
@@ -25,12 +25,12 @@ class DPModel():
 		#.   ]
 		# }
 		intents = sorted(response.items(), key=lambda x: x[1])
-		intents = [{'value': k, 'score': v} for k,v in response]
+		intent_hash = [{'value': k, 'score': v} for k,v in intents]
 		return {
-			'intents': intents
+			'intents': intent_hash
 		}
 
-	def parse_ner_response(response):
+	def parse_ner_response(self, response):
 		# return {
 		# 	'entities': [
 		# 		{
@@ -42,7 +42,7 @@ class DPModel():
 		# 	]
 		# }
 
-		tokens, tags = response
+		tokens, tags = *response
 		entities = [{ 'value': tokens[i], 'entity': tags[i] } for i in range(len(tokens)) if not tags[i] == 'O']
 		return {
 			'entities': entities

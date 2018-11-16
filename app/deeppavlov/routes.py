@@ -8,9 +8,10 @@ _models = {}
 def get_model():
 	intent_config_path = current_app.config['DP_INTENT_CONFIG_PATH']
 	ner_config_path = current_app.config['DP_NER_CONFIG_PATH']
-	if _models.get(model_path, None) == None:
-		_models[model_path] = DPModel(intent_config_path, ner_config_path)
-	return _models[model_path]
+	keys = (intent_config_path, ner_config_path)
+	if _models.get(keys, None) == None:
+		_models[keys] = DPModel(intent_config_path, ner_config_path)
+	return _models[keys]
 
 @mod.route('/parse', methods=['GET', 'POST'])
 def parse():

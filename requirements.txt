@@ -7,5 +7,6 @@ Flask-PyMongo
 spacy
 gensim
 pybind11==2.2.3
+git+https://github.com/deepmipt/fastText.git#egg=fastText==0.8.22
 tensorflow==1.10.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz

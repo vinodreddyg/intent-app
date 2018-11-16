@@ -1,5 +1,5 @@
 {
-  "deeppavlov_root": "./config/",
+  "deeppavlov_root": "./app/deeppavlov/config/",
   "dataset_reader": {
     "name": "basic_classification_reader",
     "x": "text",

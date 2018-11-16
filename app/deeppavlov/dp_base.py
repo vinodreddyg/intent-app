@@ -7,5 +7,5 @@ class DPBase():
 			deep_download(config_path)
 		self.model = build_model_from_config(config_path)
 
-	def parse(text):
-		return model([text])
+	def parse(self, text):
+		return self.model([text])[0]
