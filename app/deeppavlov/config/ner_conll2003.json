@@ -1,4 +1,5 @@
 {
+  "deeppavlov_root": "./app/deeppavlov/config/",
   "dataset_reader": {
     "name": "conll2003_reader",
     "data_path": "conll2003/",

@@ -1,8 +1,8 @@
 from rasa_nlu.model import  Metadata, Interpreter
 
 class RasaModel():
-	def __init__(self):
-		self.model = Interpreter.load('./app/rasanlu/models/nlu/default/chat')
+	def __init__(self, model_path):
+		self.model = Interpreter.load(model_path)
 
 	def parse(self, text):
 		return self.parse_model_response(self.model.parse(text))
