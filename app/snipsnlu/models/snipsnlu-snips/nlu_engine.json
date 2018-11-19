@@ -1,0 +1,368 @@
+{
+  "builtin_entity_parser": "builtin_entity_parser",
+  "config": {
+    "intent_parsers_configs": [
+      {
+        "max_pattern_length": 1000,
+        "max_queries": 100,
+        "unit_name": "deterministic_intent_parser"
+      },
+      {
+        "intent_classifier_config": {
+          "data_augmentation_config": {
+            "add_builtin_entities_examples": true,
+            "min_utterances": 20,
+            "noise_factor": 5,
+            "unknown_word_prob": 0,
+            "unknown_words_replacement_string": null
+          },
+          "featurizer_config": {
+            "pvalue_threshold": 0.4,
+            "sublinear_tf": false,
+            "use_stemming": true,
+            "word_clusters_name": null
+          },
+          "random_seed": null,
+          "unit_name": "log_reg_intent_classifier"
+        },
+        "slot_filler_config": {
+          "crf_args": {
+            "algorithm": "lbfgs",
+            "c1": 0.1,
+            "c2": 0.1
+          },
+          "data_augmentation_config": {
+            "add_builtin_entities_examples": true,
+            "capitalization_ratio": 0.2,
+            "min_utterances": 200
+          },
+          "feature_factory_configs": [
+            {
+              "args": {
+                "common_words_gazetteer_name": "top_10000_words_stemmed",
+                "n": 1,
+                "use_stemming": true
+              },
+              "factory_name": "ngram",
+              "offsets": [
+                -2,
+                -1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "args": {
+                "common_words_gazetteer_name": "top_10000_words_stemmed",
+                "n": 2,
+                "use_stemming": true
+              },
+              "factory_name": "ngram",
+              "offsets": [
+                -2,
+                1
+              ]
+            },
+            {
+              "args": {},
+              "factory_name": "is_digit",
+              "offsets": [
+                -1,
+                0,
+                1
+              ]
+            },
+            {
+              "args": {},
+              "factory_name": "is_first",
+              "offsets": [
+                -2,
+                -1,
+                0
+              ]
+            },
+            {
+              "args": {},
+              "factory_name": "is_last",
+              "offsets": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "args": {
+                "n": 1
+              },
+              "factory_name": "shape_ngram",
+              "offsets": [
+                0
+              ]
+            },
+            {
+              "args": {
+                "n": 2
+              },
+              "factory_name": "shape_ngram",
+              "offsets": [
+                -1,
+                0
+              ]
+            },
+            {
+              "args": {
+                "n": 3
+              },
+              "factory_name": "shape_ngram",
+              "offsets": [
+                -1
+              ]
+            },
+            {
+              "args": {
+                "tagging_scheme_code": 2,
+                "use_stemming": true
+              },
+              "drop_out": 0.5,
+              "factory_name": "entity_match",
+              "offsets": [
+                -2,
+                -1,
+                0
+              ]
+            },
+            {
+              "args": {
+                "tagging_scheme_code": 1
+              },
+              "factory_name": "builtin_entity_match",
+              "offsets": [
+                -2,
+                -1,
+                0
+              ]
+            },
+            {
+              "args": {
+                "cluster_name": "brown_clusters",
+                "use_stemming": false
+              },
+              "factory_name": "word_cluster",
+              "offsets": [
+                -2,
+                -1,
+                0,
+                1
+              ]
+            }
+          ],
+          "random_seed": null,
+          "tagging_scheme": 1,
+          "unit_name": "crf_slot_filler"
+        },
+        "unit_name": "probabilistic_intent_parser"
+      }
+    ],
+    "unit_name": "nlu_engine"
+  },
+  "custom_entity_parser": "custom_entity_parser",
+  "dataset_metadata": {
+    "entities": {
+      "album": {
+        "automatically_extensible": true
+      },
+      "artist": {
+        "automatically_extensible": true
+      },
+      "best_rating": {
+        "automatically_extensible": true
+      },
+      "city": {
+        "automatically_extensible": true
+      },
+      "condition_description": {
+        "automatically_extensible": true
+      },
+      "condition_temperature": {
+        "automatically_extensible": true
+      },
+      "country": {
+        "automatically_extensible": true
+      },
+      "cuisine": {
+        "automatically_extensible": true
+      },
+      "current_location": {
+        "automatically_extensible": true
+      },
+      "entity_name": {
+        "automatically_extensible": true
+      },
+      "facility": {
+        "automatically_extensible": true
+      },
+      "genre": {
+        "automatically_extensible": true
+      },
+      "geographic_poi": {
+        "automatically_extensible": true
+      },
+      "location_name": {
+        "automatically_extensible": true
+      },
+      "movie_name": {
+        "automatically_extensible": true
+      },
+      "movie_type": {
+        "automatically_extensible": true
+      },
+      "music_item": {
+        "automatically_extensible": true
+      },
+      "object_location_type": {
+        "automatically_extensible": true
+      },
+      "object_name": {
+        "automatically_extensible": true
+      },
+      "object_part_of_series_type": {
+        "automatically_extensible": true
+      },
+      "object_select": {
+        "automatically_extensible": true
+      },
+      "object_type": {
+        "automatically_extensible": true
+      },
+      "party_size_description": {
+        "automatically_extensible": true
+      },
+      "party_size_number": {
+        "automatically_extensible": true
+      },
+      "playlist": {
+        "automatically_extensible": true
+      },
+      "playlist_owner": {
+        "automatically_extensible": true
+      },
+      "poi": {
+        "automatically_extensible": true
+      },
+      "rating_unit": {
+        "automatically_extensible": true
+      },
+      "rating_value": {
+        "automatically_extensible": true
+      },
+      "restaurant_name": {
+        "automatically_extensible": true
+      },
+      "restaurant_type": {
+        "automatically_extensible": true
+      },
+      "served_dish": {
+        "automatically_extensible": true
+      },
+      "service": {
+        "automatically_extensible": true
+      },
+      "sort": {
+        "automatically_extensible": true
+      },
+      "spatial_relation": {
+        "automatically_extensible": true
+      },
+      "state": {
+        "automatically_extensible": true
+      },
+      "timeRange": {
+        "automatically_extensible": true
+      },
+      "track": {
+        "automatically_extensible": true
+      },
+      "year": {
+        "automatically_extensible": true
+      }
+    },
+    "language_code": "en",
+    "slot_name_mappings": {
+      "AddToPlaylist": {
+        "artist": "artist",
+        "entity_name": "entity_name",
+        "music_item": "music_item",
+        "playlist": "playlist",
+        "playlist_owner": "playlist_owner"
+      },
+      "BookRestaurant": {
+        "city": "city",
+        "country": "country",
+        "cuisine": "cuisine",
+        "facility": "facility",
+        "party_size_description": "party_size_description",
+        "party_size_number": "party_size_number",
+        "poi": "poi",
+        "restaurant_name": "restaurant_name",
+        "restaurant_type": "restaurant_type",
+        "served_dish": "served_dish",
+        "sort": "sort",
+        "spatial_relation": "spatial_relation",
+        "state": "state",
+        "timeRange": "timeRange"
+      },
+      "GetWeather": {
+        "city": "city",
+        "condition_description": "condition_description",
+        "condition_temperature": "condition_temperature",
+        "country": "country",
+        "current_location": "current_location",
+        "geographic_poi": "geographic_poi",
+        "spatial_relation": "spatial_relation",
+        "state": "state",
+        "timeRange": "timeRange"
+      },
+      "PlayMusic": {
+        "album": "album",
+        "artist": "artist",
+        "genre": "genre",
+        "music_item": "music_item",
+        "playlist": "playlist",
+        "service": "service",
+        "sort": "sort",
+        "track": "track",
+        "year": "year"
+      },
+      "RateBook": {
+        "best_rating": "best_rating",
+        "object_name": "object_name",
+        "object_part_of_series_type": "object_part_of_series_type",
+        "object_select": "object_select",
+        "object_type": "object_type",
+        "rating_unit": "rating_unit",
+        "rating_value": "rating_value"
+      },
+      "SearchCreativeWork": {
+        "object_name": "object_name",
+        "object_type": "object_type"
+      },
+      "SearchScreeningEvent": {
+        "location_name": "location_name",
+        "movie_name": "movie_name",
+        "movie_type": "movie_type",
+        "object_location_type": "object_location_type",
+        "object_type": "object_type",
+        "spatial_relation": "spatial_relation",
+        "timeRange": "timeRange"
+      }
+    }
+  },
+  "intent_parsers": [
+    "deterministic_intent_parser",
+    "probabilistic_intent_parser"
+  ],
+  "model_version": "0.17.0",
+  "training_package_version": "0.17.3",
+  "unit_name": "nlu_engine"
+}

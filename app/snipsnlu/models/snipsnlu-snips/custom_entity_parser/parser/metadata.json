@@ -1,0 +1,160 @@
+{
+  "parsers_metadata": [
+    {
+      "entity_identifier": "timeRange",
+      "entity_parser": "parser_1"
+    },
+    {
+      "entity_identifier": "geographic_poi",
+      "entity_parser": "parser_2"
+    },
+    {
+      "entity_identifier": "condition_description",
+      "entity_parser": "parser_3"
+    },
+    {
+      "entity_identifier": "spatial_relation",
+      "entity_parser": "parser_4"
+    },
+    {
+      "entity_identifier": "current_location",
+      "entity_parser": "parser_5"
+    },
+    {
+      "entity_identifier": "condition_temperature",
+      "entity_parser": "parser_6"
+    },
+    {
+      "entity_identifier": "state",
+      "entity_parser": "parser_7"
+    },
+    {
+      "entity_identifier": "city",
+      "entity_parser": "parser_8"
+    },
+    {
+      "entity_identifier": "country",
+      "entity_parser": "parser_9"
+    },
+    {
+      "entity_identifier": "object_type",
+      "entity_parser": "parser_10"
+    },
+    {
+      "entity_identifier": "location_name",
+      "entity_parser": "parser_11"
+    },
+    {
+      "entity_identifier": "movie_name",
+      "entity_parser": "parser_12"
+    },
+    {
+      "entity_identifier": "object_location_type",
+      "entity_parser": "parser_13"
+    },
+    {
+      "entity_identifier": "movie_type",
+      "entity_parser": "parser_14"
+    },
+    {
+      "entity_identifier": "music_item",
+      "entity_parser": "parser_15"
+    },
+    {
+      "entity_identifier": "playlist",
+      "entity_parser": "parser_16"
+    },
+    {
+      "entity_identifier": "artist",
+      "entity_parser": "parser_17"
+    },
+    {
+      "entity_identifier": "playlist_owner",
+      "entity_parser": "parser_18"
+    },
+    {
+      "entity_identifier": "entity_name",
+      "entity_parser": "parser_19"
+    },
+    {
+      "entity_identifier": "track",
+      "entity_parser": "parser_20"
+    },
+    {
+      "entity_identifier": "service",
+      "entity_parser": "parser_21"
+    },
+    {
+      "entity_identifier": "year",
+      "entity_parser": "parser_22"
+    },
+    {
+      "entity_identifier": "album",
+      "entity_parser": "parser_23"
+    },
+    {
+      "entity_identifier": "sort",
+      "entity_parser": "parser_24"
+    },
+    {
+      "entity_identifier": "genre",
+      "entity_parser": "parser_25"
+    },
+    {
+      "entity_identifier": "object_name",
+      "entity_parser": "parser_26"
+    },
+    {
+      "entity_identifier": "rating_value",
+      "entity_parser": "parser_27"
+    },
+    {
+      "entity_identifier": "best_rating",
+      "entity_parser": "parser_28"
+    },
+    {
+      "entity_identifier": "rating_unit",
+      "entity_parser": "parser_29"
+    },
+    {
+      "entity_identifier": "object_select",
+      "entity_parser": "parser_30"
+    },
+    {
+      "entity_identifier": "object_part_of_series_type",
+      "entity_parser": "parser_31"
+    },
+    {
+      "entity_identifier": "restaurant_name",
+      "entity_parser": "parser_32"
+    },
+    {
+      "entity_identifier": "restaurant_type",
+      "entity_parser": "parser_33"
+    },
+    {
+      "entity_identifier": "poi",
+      "entity_parser": "parser_34"
+    },
+    {
+      "entity_identifier": "served_dish",
+      "entity_parser": "parser_35"
+    },
+    {
+      "entity_identifier": "party_size_number",
+      "entity_parser": "parser_36"
+    },
+    {
+      "entity_identifier": "cuisine",
+      "entity_parser": "parser_37"
+    },
+    {
+      "entity_identifier": "facility",
+      "entity_parser": "parser_38"
+    },
+    {
+      "entity_identifier": "party_size_description",
+      "entity_parser": "parser_39"
+    }
+  ]
+}
