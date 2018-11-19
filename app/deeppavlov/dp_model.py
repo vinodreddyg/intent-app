@@ -24,7 +24,7 @@ class DPModel():
 		#		}
 		#.   ]
 		# }
-		sorted_intents = sorted(response[0].items(), key=lambda x: x[1])
+		sorted_intents = sorted(response[0].items(), key=lambda x: -1*x[1])
 		sorted_intent_hash = [{'value': k, 'score': v} for k,v in sorted_intents]
 		return {
 			'intent': sorted_intent_hash[0],
