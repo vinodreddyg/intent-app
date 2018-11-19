@@ -12,15 +12,6 @@
             "class": "rasa_nlu.tokenizers.spacy_tokenizer.SpacyTokenizer"
         },
         {
-            "name": "intent_entity_featurizer_regex",
-            "regex_file": "regex_featurizer.json",
-            "class": "rasa_nlu.featurizers.regex_featurizer.RegexFeaturizer"
-        },
-        {
-            "name": "intent_featurizer_spacy",
-            "class": "rasa_nlu.featurizers.spacy_featurizer.SpacyFeaturizer"
-        },
-        {
             "BILOU_flag": true,
             "features": [
                 [
@@ -55,9 +46,8 @@
             "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor"
         },
         {
-            "name": "ner_synonyms",
-            "synonyms_file": "entity_synonyms.json",
-            "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper"
+            "name": "intent_featurizer_spacy",
+            "class": "rasa_nlu.featurizers.spacy_featurizer.SpacyFeaturizer"
         },
         {
             "C": [
@@ -82,6 +72,6 @@
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20181101-011632",
+    "trained_at": "20181116-014104",
     "rasa_nlu_version": "0.13.7"
 }
